@@ -1,4 +1,5 @@
 import { loginPage } from "../../locators/login/loginPage";
+import { LoginForm } from "./loginForm";
 
 export class LoginPage {
   public form : LoginForm = new LoginForm();
@@ -10,19 +11,5 @@ export class LoginPage {
   get errorPopup() {
     return cy.getBy(loginPage.errorPopup);
   }
-
-}
-
-export class LoginForm {
-  get loginButton() {
-    return cy.getBy(loginPage.loginButton);
-  }
-
-  submit(){
-    this.loginButton.click();
-  }
-
-
-
 
 }
