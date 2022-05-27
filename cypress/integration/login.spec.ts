@@ -1,20 +1,22 @@
 import {LoginPage } from "../support/views/login/loginPage";
+import {  InventoryPage } from "../support/views/inventory/inventory";
 
 describe("User can successfully log in only with valid credentials", () => {
   let loginPage: LoginPage = new LoginPage();
+  let inventoryPage: InventoryPage = new InventoryPage();
 
   beforeEach(()=>{
     loginPage.visit();
   })
 
-  it("is impossible to login without providing password", () => {
+  it("is impossible to login without password", () => {
     loginPage.form.passCorrectUsername();
     loginPage.form.submit();
     loginPage.errorPopup.isVisible().withInfo('Password is required');
     loginPage.form.passwordInput.hasValidationError();
   });
 
-  it("is impossible to login without providing username", () => {
+  it("is impossible to login without username", () => {
     loginPage.form.passCorrectPassword()
     loginPage.form.submit();
     loginPage.errorPopup.isVisible().withInfo('Username is required')
@@ -40,7 +42,12 @@ describe("User can successfully log in only with valid credentials", () => {
     loginPage.errorPopup.isVisible();
   });
 
-  xit("is accessible possible to login with correct credentials", () => {
+  it("is possible to login with correct credentials", () => {
+    loginPage.form.passCorrectUsername();
+    loginPage.form.passCorrectPassword();
+    loginPage.form.submit();
+    inventoryPage.isVisible();
+
   });
 });
 
