@@ -12,4 +12,13 @@ export class LoginPage {
     return cy.getBy(loginPage.errorPopup);
   }
 
+  //unfortunately there is no option to login via API to this demo page
+  //so we need to login by form
+  login() {
+    this.visit();
+    this.form.passCorrectUsername();
+    this.form.passCorrectPassword();
+    this.form.submit();
+  }
+
 }
