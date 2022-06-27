@@ -3,17 +3,10 @@ export const inventoryPage = {
   cartIcon: '.shopping_cart_link',
   cartItemCounter: '.shopping_cart_badge',
   header: '.title',
-  items: {
-    babyBody: {
-      addBtn : 'add-to-cart-sauce-labs-onesie',
-      removeBtn : 'remove-sauce-labs-onesie'
-    },
-    jacket:{
-      addBtn: 'add-to-cart-sauce-labs-fleece-jacket'
-    },
-    bag:{
-      addBtn: 'add-to-cart-sauce-labs-backpack'
-    }
+}
 
-  }
+export enum Item {
+  babyBody = 'onesie',
+  jacket = 'fleece-jacket',
+  bag ='backpack'
 }

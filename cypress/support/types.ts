@@ -12,6 +12,14 @@ declare global {
                 dataTestAttribute: string,
                 args?: any,
             ) => typeof import('./commands/selectors').getBy;
+          /**
+           * Custom command to select DOM element by partial data-test test attribute.
+           * @example const searchbar = cy.getByPartial('item');
+           */
+          getByPartial: (
+            dataTestAttribute: string,
+            args?: any,
+          ) => typeof import('./commands/selectors').getByPartial;
             /**
              *
              *<p>Chainable custom command for checking </p>

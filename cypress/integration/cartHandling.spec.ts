@@ -1,5 +1,6 @@
 import {  InventoryPage } from "../support/views/inventory/inventory";
 import { LoginPage } from "../support/views/login/loginPage";
+import { Item } from "../support/locators/inventory/inventory";
 
 describe("User can add and remove items to the card", () => {
   let loginPage: LoginPage = new LoginPage();
@@ -10,19 +11,19 @@ describe("User can add and remove items to the card", () => {
     inventoryPage.isVisible();
   })
 
-  it("is possible to add items to the cart", () => {
-    inventoryPage.addBabyBody();
-    inventoryPage.cartItemCounter.isVisible();
-    inventoryPage.cartItemCounterShowsValue(1);
-    inventoryPage.addJacket();
-    inventoryPage.cartItemCounterShowsValue(2);
-    inventoryPage.addBag();
-    inventoryPage.cartItemCounterShowsValue(3);
-  });
-
-  it("is possible to remove  items to the cart", () => {
-     inventoryPage.removeBabyBody();
-     inventoryPage.cartItemCounterShowsValue(2);
+  it("is possible to add and remove items to the cart", () => {
+    //--add
+    inventoryPage.addItem(Item.babyBody);
+    inventoryPage.cart.showsValue(1);
+    inventoryPage.addItem(Item.jacket);
+    inventoryPage.cart.showsValue(2);
+    inventoryPage.addItem(Item.bag);
+    inventoryPage.cart.showsValue(3);
+    //-remove
+    inventoryPage.removeItem(Item.babyBody)
+    inventoryPage.cart.showsValue(2);
+    inventoryPage.removeAllItems();
+    inventoryPage.cart.isEmpty();
   });
 
   });

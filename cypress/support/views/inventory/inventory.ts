@@ -1,10 +1,9 @@
-import { inventoryPage } from "../../locators/inventory/inventory";
+import { inventoryPage, Item } from "../../locators/inventory/inventory";
+import { Cart } from "./cart";
 
 export class InventoryPage {
 
-  get cartIcon() {
-    return cy.get(inventoryPage.cartIcon);
-  }
+public cart: Cart = new Cart()
 
   get burgerMenu() {
     return cy.get(inventoryPage.cartIcon);
@@ -14,50 +13,21 @@ export class InventoryPage {
     return cy.get(inventoryPage.header);
   }
 
-  get babyBodyAddBtn(){
-    return cy.getBy(inventoryPage.items.babyBody.addBtn);
+  addItem(item: Item) {
+    cy.getBy(`add-to-cart-sauce-labs-${item}`).scrollIntoView().click();
+ }
+
+  removeItem(item: Item) {
+    cy.getBy(`remove-sauce-labs-${item}`).scrollIntoView().click();
   }
 
-  get babyBodyRemoveBtn(){
-    return cy.getBy(inventoryPage.items.babyBody.removeBtn);
+  removeAllItems() {
+    cy.getByPartial('remove-sauce-labs').click({multiple: true});
   }
-
-  get jacketAddBtn(){
-    return cy.getBy(inventoryPage.items.jacket.addBtn);
-  }
-
-  get bagAddBtn(){
-    return cy.getBy(inventoryPage.items.bag.addBtn);
-  }
-
-  get cartItemCounter(){
-    return cy.get(inventoryPage.cartItemCounter);
-  }
-
-  addBabyBody() {
-     this.babyBodyAddBtn.scrollIntoView().click();
-  }
-
-  removeBabyBody(){
-    this.babyBodyRemoveBtn.scrollIntoView().click();
-  }
-
-  addJacket() {
-    this.jacketAddBtn.scrollIntoView().click();
-  }
-
-  addBag() {
-    this.bagAddBtn.scrollIntoView().click();
-  }
-  cartItemCounterShowsValue(itemCount: number){
-    this.cartItemCounter.should('have.text', itemCount);
-  }
-
-
 
 
   isVisible() {
-    this.cartIcon.isVisible();
+    this.cart.cartIcon.isVisible();
     this.header.isVisible().should('have.text', 'Products');
     this.burgerMenu.isVisible();
   }
