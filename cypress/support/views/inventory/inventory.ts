@@ -1,7 +1,7 @@
 import { inventoryPage, Item } from "../../locators/inventory/inventory";
 import { Cart } from "./cart";
 
-export class InventoryPage {
+export class MainShopPage {
 
 public cart: Cart = new Cart()
 

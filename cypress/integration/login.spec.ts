@@ -2,8 +2,8 @@ import {LoginPage } from "../support/views/login/loginPage";
 import {  InventoryPage } from "../support/views/inventory/inventory";
 
 describe("User can successfully log in only with valid credentials", () => {
-  let loginPage: LoginPage = new LoginPage();
-  let inventoryPage: InventoryPage = new InventoryPage();
+  const loginPage: LoginPage = new LoginPage();
+  const inventoryPage: InventoryPage = new InventoryPage();
 
   beforeEach(()=>{
     loginPage.visit();
