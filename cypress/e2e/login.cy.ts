@@ -1,9 +1,9 @@
 import {LoginPage } from "../support/views/login/loginPage";
-import {  InventoryPage } from "../support/views/inventory/inventory";
+import { MainShopPage } from "../support/views/inventory/inventory";
 
 describe("User can successfully log in only with valid credentials", () => {
   const loginPage: LoginPage = new LoginPage();
-  const inventoryPage: InventoryPage = new InventoryPage();
+  const mainShopPage: MainShopPage = new MainShopPage();
 
   beforeEach(()=>{
     loginPage.visit();
@@ -46,7 +46,7 @@ describe("User can successfully log in only with valid credentials", () => {
     loginPage.form.passCorrectUsername();
     loginPage.form.passCorrectPassword();
     loginPage.form.submit();
-    inventoryPage.isVisible();
+    mainShopPage.isVisible();
 
   });
 });

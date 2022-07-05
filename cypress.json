@@ -1,6 +1,0 @@
-{
-  "baseUrl": "https://www.saucedemo.com/",
-  "defaultCommandTimeout": 6000,
-  "watchForFileChanges": false,
-  "chromeWebSecurity": false
-}
