@@ -1,6 +1,6 @@
-import {  MainShopPage } from "../support/views/inventory/inventory";
-import { LoginPage } from "../support/views/login/loginPage";
-import { Item } from "../support/locators/inventory/inventory";
+import {  MainShopPage } from "../../support/views/inventory/inventory";
+import { LoginPage } from "../../support/views/login/loginPage";
+import { Item } from "../../support/locators/inventory/inventory";
 
 describe("User can add and remove items to the card on the shop inventory page", () => {
   const loginPage: LoginPage = new LoginPage();
