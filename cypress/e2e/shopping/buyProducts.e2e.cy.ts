@@ -4,7 +4,7 @@ import { Item } from '../../support/locators/inventory/inventory'
 import { CartPage } from '../../support/views/inventory/cartPage'
 import { CheckoutPage } from '../../support/views/purchasing/checkoutPage'
 import { OverviewPage } from '../../support/views/purchasing/overviewPage'
-import { FinishPage } from '../../support/views/purchasing/finishPage'
+import { FinalPage } from '../../support/views/purchasing/finalPage'
 
 describe('User can buy products from page, simplest happy path end to end scenario', () => {
   const loginPage: LoginPage = new LoginPage()
@@ -12,7 +12,7 @@ describe('User can buy products from page, simplest happy path end to end scenar
   const cartPage: CartPage = new CartPage()
   const checkoutPage: CheckoutPage = new CheckoutPage()
   const overviewPage: OverviewPage = new OverviewPage()
-  const finishPage: FinishPage = new FinishPage()
+  const finalPage: FinalPage = new FinalPage()
 
   before(() => {
     loginPage.login()
@@ -29,9 +29,9 @@ describe('User can buy products from page, simplest happy path end to end scenar
     checkoutPage.fillOutCorrectlyForm()
     overviewPage.isCorrectlyLoaded()
     overviewPage.finishShopping()
-    finishPage.isCorrectlyLoaded()
-    finishPage.headerBanner.isVisible().withInfo('THANK YOU FOR YOUR ORDER')
-    finishPage.noticeForClient
+    finalPage.isCorrectlyLoaded()
+    finalPage.headerBanner.isVisible().withInfo('THANK YOU FOR YOUR ORDER')
+    finalPage.noticeForClient
       .isVisible()
       .withInfo(
         'Your order has been dispatched, and will arrive just as fast as the pony can get there!'

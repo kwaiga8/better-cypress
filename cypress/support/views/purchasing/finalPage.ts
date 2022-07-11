@@ -1,20 +1,20 @@
 import { AppPage } from '../../views/common/appPage'
-import { finishPage } from '../../locators/purchasing/finishPage'
+import { finalPage } from '../../locators/purchasing/finalPage'
 
-export class FinishPage extends AppPage {
+export class FinalPage extends AppPage {
   public title: string = 'Checkout: Complete!'
   public url: string = '/checkout-complete.html'
 
   get headerBanner() {
-    return cy.get(finishPage.headerBanner)
+    return cy.get(finalPage.headerBanner)
   }
 
   get noticeForClient() {
-    return cy.get(finishPage.finalInfo)
+    return cy.get(finalPage.finalInfo)
   }
 
   get finialImage() {
-    return cy.get(finishPage.ponyImage)
+    return cy.get(finalPage.ponyImage)
   }
 
   isCorrectlyLoaded() {
