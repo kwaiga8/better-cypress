@@ -1,8 +1,7 @@
 export const inventoryPage = {
   burgerMenu: '#react-burger-menu-btn',
   cartIcon: '.shopping_cart_link',
-  cartItemCounter: '.shopping_cart_badge',
-  header: '.title'
+  cartItemCounter: '.shopping_cart_badge'
 }
 
 export enum Item {

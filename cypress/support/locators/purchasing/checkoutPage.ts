@@ -1,4 +1,6 @@
 export const checkoutPage = {
   continueBtn: 'continue',
-  title: '.title'
+  nameInput: 'firstName',
+  lastNameInput: 'lastName',
+  zipCode: 'postalCode'
 }

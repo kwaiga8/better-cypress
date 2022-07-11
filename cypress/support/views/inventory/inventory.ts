@@ -1,15 +1,14 @@
 import { inventoryPage, Item } from '../../locators/inventory/inventory'
 import { Cart } from './cart'
+import { AppPage, IAppPage } from '../common/appPage'
 
-export class MainShopPage {
+export class MainShopPage extends AppPage {
+  public title: string = 'Products'
+  public url: string = '/inventory.html'
   public cart: Cart = new Cart()
 
   get burgerMenu() {
     return cy.get(inventoryPage.cartIcon)
-  }
-
-  get header() {
-    return cy.get(inventoryPage.header)
   }
 
   addItem(item: Item) {
@@ -24,9 +23,8 @@ export class MainShopPage {
     cy.getByPartial('remove-sauce-labs').click({ multiple: true })
   }
 
-  isVisible() {
-    this.cart.cartIcon.isVisible()
-    this.header.isVisible().should('have.text', 'Products')
+  isCorrectlyLoaded() {
+    super.isCorrectlyLoaded()
     this.burgerMenu.isVisible()
   }
 }
