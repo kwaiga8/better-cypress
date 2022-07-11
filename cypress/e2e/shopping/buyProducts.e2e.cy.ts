@@ -28,7 +28,7 @@ describe('User can buy products from page, simplest happy path end to end scenar
     checkoutPage.isCorrectlyLoaded()
     checkoutPage.fillOutCorrectlyForm()
     overviewPage.isCorrectlyLoaded()
-    overviewPage.finishShopping()
+    overviewPage.finishBtn.click()
     finalPage.isCorrectlyLoaded()
     finalPage.headerBanner.isVisible().withInfo('THANK YOU FOR YOUR ORDER')
     finalPage.noticeForClient

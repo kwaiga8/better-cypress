@@ -8,8 +8,4 @@ export class OverviewPage extends AppPage {
   get finishBtn() {
     return cy.getBy(overviewPage.finishBtn)
   }
-
-  finishShopping() {
-    this.finishBtn.click()
-  }
 }
