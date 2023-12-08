@@ -14,7 +14,7 @@ describe('User can successfully log out', () => {
   })
 
   it('is possible to log out', () => {
-   
+    mainShopPage.isCorrectlyLoaded()
   })
 
  
