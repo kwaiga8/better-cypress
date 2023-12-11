@@ -1,7 +1,7 @@
 # better-cypress
 <p>
 Yes you can write elegant code in Cypress + TypeScript!
-<p>Java + Selenium is the best option for automated UI tests? Let's try smth ligther ; )
+<p>Java + Selenium is the best option for automated UI tests? Let's try something lighter ; )
 </p>
 <p>
 Checkout construction of those
