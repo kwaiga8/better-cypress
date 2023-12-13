@@ -6,7 +6,7 @@ import { CheckoutPage } from '../../support/views/purchasing/checkoutPage'
 import { OverviewPage } from '../../support/views/purchasing/overviewPage'
 import { FinalPage } from '../../support/views/purchasing/finalPage'
 
-describe('User can buy products from page, --', () => {
+describe('User can buy products from page', () => {
   const loginPage: LoginPage = new LoginPage()
   const shopPage: MainShopPage = new MainShopPage()
   const cartPage: CartPage = new CartPage()

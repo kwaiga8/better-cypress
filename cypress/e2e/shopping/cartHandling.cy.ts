@@ -2,7 +2,7 @@ import { MainShopPage } from '../../support/views/inventory/inventory'
 import { LoginPage } from '../../support/views/login/loginPage'
 import { Item } from '../../support/locators/inventory/inventory'
 
-describe('User can add and remove items to the card in the shop inventory page', () => {
+describe('User can add and remove items to the card', () => {
   const loginPage: LoginPage = new LoginPage()
   const shopPage: MainShopPage = new MainShopPage()
 
